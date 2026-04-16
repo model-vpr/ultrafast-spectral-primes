@@ -31,6 +31,10 @@ The following results were obtained on a standard **MacBook Pro (i7 @ 2.8 GHz)**
 | **2048-bit** | 617 | **284.12 ms** | 271.11 ms | 100% | Proto |
 | **4096-bit** | 1234 | **2.06 sec** | 1.43 sec | 100% | Proto |
 
+
+
+
+
 ### 💡 Why this is a Breakthrough:
 - **Beating Optimized C**: Typical optimized OpenSSL Miller-Rabin implementations for 1024-bit primes range between 50-100 ms. Our **unoptimized Python** code already cuts this time by half.
 - **The "Radar" Advantage**: Unlike classical methods that search blindly, the **Spectral Law** acts as a radar, pointing directly to high-density prime regions, drastically reducing the search space.

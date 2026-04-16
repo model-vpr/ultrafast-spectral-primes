@@ -19,11 +19,6 @@ This is a **high-performance research prototype** that challenges classical prob
 The following results were obtained on a standard **MacBook Pro (i7 @ 2.8 GHz)** using a **single-threaded Python** environment. No GPU, no parallel computing, and no C++ extensions were used.
 
 
-
-
-
-
-
 | Key Size | Digits | **Spectral Law (Mean)** | **Spectral Law (Median)** | **Accuracy** | **Status** |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **512-bit** | 154 | **8.10 ms** | 5.60 ms | 100% | Proto |

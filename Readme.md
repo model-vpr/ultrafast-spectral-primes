@@ -39,7 +39,7 @@ https://github.com/user-attachments/assets/f0955ca6-164a-4663-956f-8862b4d83f52
 
 This framework provides empirical evidence for the **Hilbert-Pólya conjecture**. We treat the non-trivial zeros of the Riemann zeta function as eigenvalues of a self-adjoint operator $\hat{H}$.
 
-- **Riemann Resonance Operator**: We model prime numbers as singular potentials (Dirac deltas) within a Sturm-Liouville framework.
+- **Riemann Resonance Operator**: We construct an operator-inspired spectral framework whose eigenvalues numerically coincide with the Riemann zeros with high precision.
 - **Spectral Law**: We discovered that the zeros follow dynamic scaling laws, allowing us to generate "virtual zeros" for any range ($n_{max}$) with $R^2 = 0.99999$.
 
 ## ⚙️ The Three-Step Pipeline

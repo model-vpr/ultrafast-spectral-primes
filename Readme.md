@@ -70,7 +70,8 @@ The method is independently validated using true Riemann zeros from `mpmath.zeta
 ## 📚 Reproducibility & Full Theory
 
 The full theoretical framework, detailed derivations, and extended experiment results are documented in our preprints:
-📄 **[A Spectral Method for Ultra-Fast Generation of Large Prime Numbers]([ADD YOUR LINK HERE])**
+
+📄 **[A Spectral Method for Ultra-Fast Generation of Large Prime Numbers]**([(https://zenodo.org/records/19626049)])])
 
 📄 **[Empirical Validation of the Prime Nodal Condition and the Spectral Law for the Riemann Hypothesis]**([https://zenodo.org/records/17726547])
 

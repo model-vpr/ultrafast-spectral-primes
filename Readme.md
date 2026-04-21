@@ -48,7 +48,7 @@ This framework provides empirical evidence for the **Hilbert-Pólya conjecture**
 2. **Explicit Formula**: Riemann’s explicit formula computes the Chebyshev function $\psi(x)$. Prime numbers emerge as characteristic jumps.
 3. **Resonance Detection**: An adaptive thresholding algorithm transforms these jumps into discrete resonance peaks, identifying the prime candidate with zero prior knowledge of prime locations.
 
-## 📐 Scaling Laws for Coefficients (Final Version)- (The Spectral Law_ From Quantum Hamiltonian to Riemann Zeros.pdf)
+## 📐 Scaling Laws for Coefficients (Final Version)
 
 Through extensive fractal analysis and conservation law discovery, the coefficients for the Spectral Law follow these **empirical laws** with unprecedented accuracy:
 

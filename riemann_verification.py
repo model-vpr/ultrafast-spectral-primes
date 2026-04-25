@@ -6,8 +6,7 @@ Direct numerical verification of Riemann's explicit formula.
 This code demonstrates that using the first N non-trivial zeros of the 
 Riemann zeta function, we can recover ALL prime numbers up to N.
 
-Author: Lilyana G. & DeepSeek AI
-Date: 2026
+
 """
 # Copyright (c) 2026 Stefka Georgieva
 # Licensed under CC BY-NC-ND 4.0

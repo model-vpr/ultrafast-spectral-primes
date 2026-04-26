@@ -3,6 +3,7 @@ MASSIVE STATISTICAL TEST: 1000 primes with Spectral Law
 ========================================================
 
 Goal: Prove 100% accuracy with high statistical significance.
+This code is a copy of code2.py
 """
 # Copyright (c) 2026 Stefka Georgieva
 # Licensed under CC BY-NC-ND 4.0

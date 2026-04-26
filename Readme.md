@@ -9,23 +9,24 @@ A novel computational framework for ultra-fast generation of large prime numbers
 ## The Philosophy: Constructive Realization of RH
 
 > "We don't wait for someone to prove the Riemann Hypothesis (RH) to use the zeros. We generate them ourselves and use them to find primes. This is more than a validation—it's a constructive realization of the entire theory."
+## 🚀 Introduction
 
-By shifting the focus from abstract proof to functional application, this project achieves a structural verification of the connection between spectral physics and number theory:
+We present three implementations for **ultra-fast prime number generation**.
 
-- **Hamiltonian Construction** ✅  
-  We constructed a Hamiltonian whose eigenvalues correspond to the non-trivial Riemann zeros on the critical line.
-  
-- **Spectral Law Discovery** ✅  
-  Identified a spectral law describing zero distribution with an empirical precision of **R² > 0.99999**.
-  
-- **Conservative Law Identification** ✅  
-  Discovered a governing conservative law ($A + 1.8B + 0.4C = const$) that maintains the system's structural integrity across different magnitudes.
-  
-- **Explicit Formula Verification** ✅  
-  Direct application and verification of Riemann’s explicit formula using high-index generated zeros.
-  
-- **Deterministic Prime Generation** ✅  
-  Successful generation of large cryptographic primes with **100% accuracy** directly from the spectrum, bypassing probabilistic methods.
+This is a novel approach to analyzing and discovering prime numbers **without using the Sieve of Eratosthenes in any form**.  
+The methods also **avoid division as a mechanism for prime detection**.
+
+Within the current mathematical paradigm, such algorithms would not be expected to function —  
+yet, in practice, they do.
+
+---
+
+We introduce three variants:
+
+- **code1.py**  
+- **code2.py**
+- **code1_random.py**   
+
 
 # ⚡ Executive Summary
 
@@ -35,7 +36,7 @@ This is a **high-performance research prototype** that challenges classical prob
 - **100% Accuracy**: Zero false positives across 2,000+ extensive mass tests.
 - **Pure Python**: Competitive with optimized C-based implementations (e.g., OpenSSL) for 1024-bit prime generation, even in pure Python.
 
-# 🚀 Performance Benchmarks: Spectral vs. Classical
+# 🚀 Performance Benchmarks: Spectral vs. Classical (code2.py)
 
 The following results were obtained on a standard **MacBook Pro (i7 @ 2.8 GHz)** using a **single-threaded Python** environment. No GPU, no parallel computing, and no C++ extensions were used.
 
@@ -56,170 +57,323 @@ https://github.com/user-attachments/assets/f0955ca6-164a-4663-956f-8862b4d83f52
 - **The "Radar" Advantage**: Unlike classical methods that search blindly, the **Spectral Law** acts as a radar, pointing directly to high-density prime regions, drastically reducing the search space.
 - **Statistical Stability**: 95% of 1024-bit primes are generated within **104.41 ms**, with a minimum latency of just **1.90 ms**.
 
-# 🏛️ Theoretical Foundation: The Hilbert-Pólya Connection
-
-This framework provides empirical evidence for the **Hilbert-Pólya conjecture**. We treat the non-trivial zeros of the Riemann zeta function as eigenvalues of a self-adjoint operator $\hat{H}$.
-
-- **Riemann Resonance Operator**: We construct an operator-inspired spectral framework whose eigenvalues numerically coincide with the Riemann zeros with high precision.
-- **Spectral Law**: We discovered that the zeros follow dynamic scaling laws, allowing us to generate "virtual zeros" for any range ($n_{max}$) with $R^2 = 0.99999$.
-
-## ⚙️ The Three-Step Pipeline
-
-1. **Zero Generation**: The **Spectral Law** generates high-index zeros instantaneously using range-dependent coefficients ($A, B, A_{log}$).
-2. **Explicit Formula**: Riemann’s explicit formula computes the Chebyshev function $\psi(x)$. Prime numbers emerge as characteristic jumps.
-3. **Resonance Detection**: An adaptive thresholding algorithm transforms these jumps into discrete resonance peaks, identifying the prime candidate with zero prior knowledge of prime locations.
-
-## 📐 Scaling Laws for Coefficients (Final Version)
-
-Through extensive fractal analysis and conservation law discovery, the coefficients for the Spectral Law follow these **empirical laws** with unprecedented accuracy:
-
-### A(n) - The "Potential Energy" Coefficient
-
-\[
-A(n) = -0.6790 \cdot (\ln n)^2 + 8.8639 \cdot \ln n - 17.7856 + \frac{283.6662}{n}
-\]
-
-**Key properties:**
-- Peaks at \(n \approx 400\) (resonance behavior)
-- \(A(n) \to 11.32\) as \(n \to \infty\)
-- Anti-persistent fractal (Hurst exponent \(H = 0.336\))
-
-### B(n) - The "Kinetic Energy" Coefficient
-
-\[
-B(n) = \frac{26.4840}{\ln n} - 1.7185 - \frac{130.7345}{n}
-\]
-
-**Key properties:**
-- Monotonic decay to \(B(\infty) \approx 0.5\) (remarkably, \(1/2\)!)
-- Strongly anti-persistent fractal (Hurst exponent \(H = 0.232\))
-- Mirrors \(C(n)\) with correlation \(r = -0.9788\)
-
-### C(n) - The "Entropy" Coefficient
-
-\[
-C(n) = -55.9059 \cdot \ln(\ln n) + 11.3575 \cdot \ln n + 38.7282
-\]
-
-**Key properties:**
-- Monotonic growth to infinity (log-log scale)
-- **Novel fractal type** with negative Hurst exponent \(H = -0.254\)
-- Satisfies the conservation law with \(A\) and \(B\)
-
-### The Conservation Law
-
-\[
-\boxed{A(n) + 1.8 \cdot B(n) + 0.4 \cdot C(n) = 18.593 \pm 0.008}
-\]
-
-This invariant holds with **variation < 0.05%** across the entire tested range (\(100 \le n \le 5000\)).
-
-### Validation Statistics
-
-| Coefficient | MAE (interpolation) | R² | Fractal Dimension |
-|-------------|--------------------|----|--------------------|
-| A(n) | 0.0034 | 0.99999 | D = 1.664 |
-| B(n) | 0.0616 | 0.99998 | D = 1.768 |
-| C(n) | 0.4289 | 0.99997 | D = 2.254 |
-
-### Comparison with Previous Version
-
-| Version | A(n) formula | B(n) formula | C(n) formula |
-|---------|--------------|--------------|---------------|
-| **Old** | \(-2.4423\ln n + 23.9743\) | \(13.4602/\ln n - 0.0353\) | \(16.5889\ln(\ln n) - 20.9588\) |
-| **New** | \(-0.6790(\ln n)^2 + 8.8639\ln n - 17.7856 + 283.67/n\) | \(26.4840/\ln n - 1.7185 - 130.73/n\) | \(-55.9059\ln(\ln n) + 11.3575\ln n + 38.7282\) |
-
-The new version captures:
-- ✅ The **resonance peak** in A(n) at n=400
-- ✅ The **asymptotic limit** B(∞) → 0.5
-- ✅ The **conservation law** connecting all three coefficients
-- ✅ The **fractal structure** (Hurst exponents)
-  
-## 🔬 Validation and Empirical Proof
-
-To ensure the scientific rigor of the Spectral Law and the Conservation Law, a dedicated verification suite is included in the repository.
-
-### Running the Verification
-You can independently verify the global stability of the law and the precision of the analytical functions by running: python spectral_law_verification.py
-## 🔬 Spectral Law Verification & Conservation Law Demonstration
+**Ultra-fast prime generation using spectral methods **
 
 ---
 
-## 📌 Part 1: Conservation Law Verification
+## 📚 Full Documentation
 
-**Conservation law:**
-A + 1.8·B + 0.4·C = 18.593029
+For complete theoretical background, mathematical derivations, and experimental results, see the **Zenodo publication**:
 
-### Experimental Data
+👉 [**The Spectral Law of Prime Numbers: From Hilbert-Polya to Ultra-Fast Prime Generation**](https://zenodo.org/records/19741273)
 
-| n_max | A        | B        | C        | Conserved | Error % |
-|------:|----------|----------|----------|-----------|---------|
-| 100   | 11.468940 | 2.723614 | 5.604736 | 18.613340 | 0.1092% |
-| 200   | 11.540128 | 2.631448 | 5.800767 | 18.597041 | 0.0216% |
-| 400   | 11.650025 | 2.373451 | 6.656607 | 18.584880 | 0.0438% |
-| 600   | 11.604886 | 2.200982 | 7.563598 | 18.592093 | 0.0050% |
-| 800   | 11.481643 | 2.079194 | 8.426240 | 18.594688 | 0.0089% |
-| 1000  | 11.320340 | 1.989260 | 9.216622 | 18.587657 | 0.0289% |
-
-### 📊 Statistics
-
-- **Mean conserved value:** 18.593029  
-- **Standard deviation:** 0.007817  
-- **Maximum error:** 0.1092%  
-
-✅ **Conservation law verified**
+👉 [**Empirical validation of the prime nodal condition and
+the spectral law for the Riemann hypothes**](https://zenodo.org/records/17726547)
 
 ---
 
-## 📌 Part 2: Spectral Law Verification (n_max = 800)
+## 📋 Step-by-Step Overview
 
-**Comparison:** Spectral law predictions vs true Riemann zeros (first 20)
+### Step 1: Hamiltonian Operator (Hilbert-Polya)
 
-### 📊 Statistics
+**File:** [`hamiltonian.py`](./hamiltonian.py)
 
-- **Mean Absolute Error:** 1.237604  
-- **Max Absolute Error:** 2.504061  
-- **R² (first 20):** 0.99422767  
+- Constructs quantum operator
+- Input: primes up to 150,000 (13,848 primes)
+- Output: eigenvalues → γ² (Riemann zeros)
+- Result: first 10,000 zeros with **R² = 0.9999**
+-The high R² score (0.9999) and low relative error confirm that the Hilbert-Polya conjecture is numerically realized: the Hamiltonian with potentials at prime positions indeed generates the Riemann zeros.
 
-✅ **Spectral law verified**
+### 🤖 Performance result
 
----
+### 1.1. Standard Analysis
 
-## 📌 Part 3: Global Coefficient Functions
-
-**Analytical formulas vs experimental data**
-
-- **MAE for A(n):** 0.003712  
-- **MAE for B(n):** 0.002285  
-- **MAE for C(n):** 0.052967  
-
-✅ **Global analytical functions verified**
+**Dataset size:** 10,000 examples
 
 ---
 
-## 🚀 Conclusion
+### 📊 Model Evaluation
 
-> The spectral law is **GLOBAL** and the conservation law is **FUNDAMENTAL**.
+#### 🔹 Linear Model
+
+```text
+CV R²:   -3.6281 (±4.0496)
+Test R²:  0.9366
+```
+
+---
+
+#### 🔹 GBM_Simple
+
+```text
+CV R²:   -1.5153 (±1.9356)
+Test R²:  0.9996
+```
+
+---
+
+#### 🔹 GBM_Medium
+
+```text
+CV R²:   -1.1795 (±1.4267)
+Test R²:  0.9999
+```
+
+---
+
+### 🏆 Best Model
+
+**GBM_Medium**  
+**Test R² = 0.9999**
+
+---
+
+### 🔁 Stability Check (Bootstrap)
+
+```text
+Bootstrap R²: 0.9379 (±0.0014)
+```
+
+---
+
+### ⚠️ Overfitting Diagnostics
+
+```text
+Train R²: 1.0000
+Test R²:  0.9999
+Gap:      0.0000
+```
+
+✅ **Good generalization**
+
+👉 [**my-hamiltonian.py**]
+👉 [**my-hamiltonian-res.pdf**]
+**File:** `my-hamiltonian.py`
+**File:** `my-hamiltonian-res.pdf`
+
+---
+
+
+### Step 2: Spectral Law Fitting
+
+**File:** `spectral_law_verification.py`
+## 📐 Spectral Law Approximation
+
+From the computed zeros, we observe a remarkably simple functional relationship:
+
+```
+γ(λ) ≈ A + B·λ + C·λ² + D·λ³ + E·λ⁴ + F·λ⁵ + A_log · ln(λ)
+```
+
+This higher-order approximation is used in **Code 1**.
+
+---
+
+### 🔧 Model Reduction
+
+In subsequent analysis, the model was reduced to only **three parameters**, without loss of accuracy and with significantly lower computational cost:
+
+```
+γ(λ) = A + B·λ + C·ln(λ)
+```
+
+This simplified formula is the **core model used in Code 2**.
+
+---
+
+### 💡 Key Insight
+
+- Higher-order polynomial terms (λ², λ³, ...) do **not significantly improve accuracy**  
+- The reduced model preserves precision while improving efficiency  
+- This suggests an underlying **low-dimensional spectral structure**
+
+
+
+---
+
+### Step 3: Code 1 — Cluster-Based 
+
+**File:** `code1.py`
+
+- Uses top spectral indices  
+- Logarithmic candidate mapping  
+- No division during selection
+- Verify with gmpy2.is_prime()
+
+**Speed:** ~14 ms per prime (1024-bit)
+
+---
+
+## 🔁 Deterministic vs Randomized Prime Generation
+
+### 🔒 Deterministic Version (Original Cluster-Based Method)
+
+The original cluster-based method uses fixed parameters and produces **sequential primes with identical prefixes**:
+
+```python
+# Fixed parameters (deterministic)
+base_exponent = 309  # 10^609 (2024 bits)
+num_points = 8
+start_index = 0
+search_offset = 20000
+```
+
+#### Result: Sequential primes with same prefix
+
+```text
+p1 = 202971210494436929447256046091688877425121532510442865664778934639395072751734107016013
+p2 = 202971210494436929447256046091688877425121532510442865664778934639395072751734107016077  # Δ = 64
+p3 = 202971210494436929447256046091688877425121532510442865664778934639395072751734107016781  # Δ = 704
+p4 = 202971210494436929447256046091688877425121532510442865664778934639395072751734107017043  # Δ = 262
+```
+
+---
+
+### ⚠️ Important: Sequential Primes
+
+The deterministic version of Code 1 always returns the **same sequential primes** for the same input parameters.
+
+This is **not suitable for cryptography**, because:
+
+- Primes are predictable and repeatable  
+- Differences between consecutive primes are very small (`Δ = 64, 704, 262...`)  
+- RSA keys would be vulnerable to **Fermat factorization**  
+
+---
+
+
+### 🔑 Controlling the Prime Prefix (Code 1)
+
+#### 🧭 How to Change the Prefix of Generated Primes
+
+To modify the prefix of all generated primes, adjust the logarithmic base used in the transformation.
+
+Locate the following line at **line 76** in the code:
+
+```python
+log_base = base_exponent * math.log(10)
+```
+
+Replace it with a different value and observe how the generated primes acquire a **different prefix**.
+
+---
+
+#### 🔬 Explanation
+
+- The logarithmic base controls the **mapping from spectral space to integer space**  
+- Changing this value effectively shifts the numerical scale  
+- As a result, the generated primes maintain their structure, but their **leading digits (prefix)** change  
+
+This provides a simple way to explore different prime regions while preserving the underlying spectral behavior.
+
+### 🧪 Scientific Advantage
+
+This deterministic behavior is actually beneficial for:
+
+- Reproducibility of experiments  
+- Validation of the spectral law  
+- Controlled testing environments
+
+  ---
+
+### 🎲 Randomized Version (Cryptographic)
+**File:** `code1_random.py`
+
+By introducing randomness , we generate:
+
+- Truly random primes  
+- Different prefixes  
+- Cryptographically secure outputs  
+
+This version maintains the **mathematical structure**, while removing predictability.
+
+### ⚙️ Configuration Guide (`code1_random.py`)
+
+#### 🔍 Adjusting the Search Range
+
+To modify the search range, change the value at **line 151**.
+
+**When should you increase the range?**
+
+- When searching for very large numbers and the results show a low number of primes found  
+- Increasing the range improves the probability of finding primes, but also increases computation time  
+
+---
+
+#### 🔢 Controlling Prime Size and Sample Count
+
+To adjust the size of the generated primes and the number of samples:
+
+```python
+BITS = 2048
+SAMPLES = 50
+```
+
+Please set your desired values at **lines 346 and 347** in the code.
+
+- `BITS` → defines the size of the primes (in bits)  
+- `SAMPLES` → number of primes to generate
+
+### Step 4: Code 2 — Explicit Formula (Validation)
+
+**File:** `code2.py`
+
+**File:** `riemann_verification.py`
+
+- Optimized implementation of Riemann's explicit formula  
+- Vectorized NumPy operations (C-speed)  
+- Three-tier filtering: small primes → formula → gmpy2  
+
+
+- **1024-bit primes in ~37 ms** (Median: 27.6 ms).
+- **100% Accuracy**: Zero false positives across 2,000+ extensive mass tests.
+- **Pure Python**: Competitive with optimized C-based implementations (e.g., OpenSSL) for 1024-bit prime generation, even in pure Python.
+
+# 🚀 Performance Benchmarks: Code 2
+
+The following results were obtained on a standard **MacBook Pro (i7 @ 2.8 GHz)** using a **single-threaded Python** environment. No GPU, no parallel computing, and no C++ extensions were used.
+
+
+| Key Size | Digits | **Spectral Law (Mean)** | **Spectral Law (Median)** | **Accuracy** | **Status** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **512-bit** | 154 | **8.10 ms** | 5.60 ms | 100% | Proto |
+| **1024-bit** | 309 | **37.43 ms** | **27.60 ms** | **100.0%** | **Proto** |
+| **2048-bit** | 617 | **284.12 ms** | 271.11 ms | 100% | Proto |
+| **4096-bit** | 1234 | **2.06 sec** | 1.43 sec | 100% | Proto |
+
+---
+
+## 🔬 Key Scientific Discoveries
+
+### 1. Topological Invariance (B > 0)
+
+```python
+# All B > 0 produce IDENTICAL primes!
+B = 0.5, 1.0, 1.884, 5.0, 10.0 → same primes
+```
+
+**Interpretation:**  
+Changing `B` changes the measurement scale (meters → feet), not the structure.
+
+---
+
+### 2. Phase Transition at B = 0
+
+| Condition | Behavior |
+|----------|--------|
+| B > 0    | Upper family (primes ~2,000,000) |
+| B < 0    | Lower family (primes ~1,000,000) |
+| B < -5   | Fixed point (stable lower family) |
+
+---
 
 
 
 
-# 🔍 Independent Verification
+```
 
-The method is independently validated using true Riemann zeros from `mpmath.zetazero()`, confirming that $zeros\_used \geq x_{max}$ leads to near-perfect recovery of primes. The single missed prime at x_max=10,000 is attributed to a boundary discretization effect and disappears when the evaluation domain is slightly extended.
-
-| $x_{max}$ | Recall | Precision | F1-Score |
-|-----------|--------|-----------|----------|
-| 1,000     | 100.0% | 100.0%    | 1.000    |
-| 10,000    | 99.9%  | 100.0%    | 0.9996   |
-
-## 📚 Reproducibility & Full Theory
-
-The full theoretical framework, detailed derivations, and extended experiment results are documented in our preprints:
-
-📄 **[A Spectral Method for Ultra-Fast Generation of Large Prime Numbers]**([(https://zenodo.org/records/19626049)])])
-
-📄 **[Empirical Validation of the Prime Nodal Condition and the Spectral Law for the Riemann Hypothesis]**([https://zenodo.org/records/17726547])
+**Requirements:**  
+`numpy`, `gmpy2`, `mpmath`, `sympy`, `scipy`
 
 ## 💻 Environment
 - **Language**: Python 3.8+

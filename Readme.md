@@ -76,7 +76,7 @@ the spectral law for the Riemann hypothes**](https://zenodo.org/records/17726547
 
 ### Step 1: Hamiltonian Operator (Hilbert-Polya)
 
-**File:** [`hamiltonian.py`](./hamiltonian.py)
+**File:** [`my-hamiltonian.py`](./my-hamiltonian.py)
 
 - Constructs quantum operator
 - Input: primes up to 150,000 (13,848 primes)

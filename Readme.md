@@ -322,7 +322,7 @@ Please set your desired values at **lines 346 and 347** in the code.
 
 - Optimized implementation of Riemann's explicit formula  
 - Vectorized NumPy operations (C-speed)  
-- Three-tier filtering: small primes → formula → gmpy2  
+    
 
 
 - **1024-bit primes in ~37 ms** (Median: 27.6 ms).

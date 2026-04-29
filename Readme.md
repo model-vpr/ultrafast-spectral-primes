@@ -59,6 +59,25 @@ https://github.com/user-attachments/assets/f0955ca6-164a-4663-956f-8862b4d83f52
 
 **Ultra-fast prime generation using spectral methods **
 
+## 📊 Summary of Results — Code 1
+
+| Bit length | Primes | Time (s) | ms/prime |
+|-----------|--------|---------|----------|
+| 332       | 848    | 1.66    | 2.0      |
+| 512       | 580    | 2.04    | 3.5      |
+| 1024      | 267    | 3.68    | 13.8     |
+| 2048      | 132    | 10.47   | 79.3     |
+| 4096      | 67     | 51.55   | 769      |
+| 4096      | 125    | 77.74   | 622      |
+
+---
+
+**Hardware:** Intel i7, 16 GB RAM, Python 3.13, 8 parallel processes  
+
+**Note:**  
+For 4096-bit numbers, increasing spectral resolution from 50 to 100 eigenvalues improves efficiency by ≈19%  
+(622 vs 769 ms/prime).
+
 ---
 
 ## 📚 Full Documentation

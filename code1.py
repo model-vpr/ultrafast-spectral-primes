@@ -26,8 +26,8 @@ mp.dps = 500
 class SpectralPrimeConfig:
     def __init__(self):
         self.spectral_params = {
-            'A': 11.379, 'B': 3.220, 'C': -0.0141,
-            'D': 0.000053, 'E': -9e-8, 'F': 1e-10, 'A_log': 5.0
+            'A': 11.8213924109, 'B': 2.2926091905, 'C': -0.0049786427,
+            'D': 0.0000155915, 'E': -0.0000000261, 'F': 1e-10, 'A_log': 6.9483203217
         }
 
 def quinitic_with_log_law(x, A, B, C, D, E, F, A_log):

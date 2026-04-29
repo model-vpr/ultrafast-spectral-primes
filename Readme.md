@@ -53,11 +53,12 @@ For 4096-bit numbers, increasing spectral resolution from 50 to 100 eigenvalues 
 (622 vs 769 ms/prime).
 
 
+
+# 🚀 Performance Benchmarks: Spectral vs. Classical (code2.py)
 - **1024-bit primes in ~37 ms** (Median: 27.6 ms).
 - **100% Accuracy**: Zero false positives across 2,000+ extensive mass tests.
 - **Pure Python**: Competitive with optimized C-based implementations (e.g., OpenSSL) for 1024-bit prime generation, even in pure Python.
 
-# 🚀 Performance Benchmarks: Spectral vs. Classical (code2.py)
 
 
 The following results were obtained on a standard **MacBook Pro (i7 @ 2.8 GHz)** using a **single-threaded Python** environment. No GPU, no parallel computing, and no C++ extensions were used.

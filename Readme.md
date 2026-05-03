@@ -5,6 +5,7 @@
 ![Status](https://img.shields.io/badge/status-research--prototype-important.svg)
 
 A novel computational framework for ultra-fast generation of large prime numbers, leveraging the spectral structure of the Riemann zeta function.
+For complete theoretical background, mathematical derivations, and experimental results, see the **Zenodo publication https://doi.org/10.5281/zenodo.19893929**:
 
 ## The Philosophy: Constructive Realization of RH
 

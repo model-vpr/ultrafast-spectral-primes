@@ -88,9 +88,9 @@ https://github.com/user-attachments/assets/f0955ca6-164a-4663-956f-8862b4d83f52
 
 ## 📚 Full Documentation
 
-For complete theoretical background, mathematical derivations, and experimental results, see the **Zenodo publication**:
+For complete theoretical background, mathematical derivations, and experimental results, see the **Zenodo publication https://doi.org/10.5281/zenodo.19893929**:
 
-👉 [**The Spectral Law of Prime Numbers: From Hilbert-Polya to Ultra-Fast Prime Generation**](https://zenodo.org/records/19793249)
+👉 [**The Spectral Law of Prime Numbers**](https://zenodo.org/records/19893929)
 
 👉 [**Empirical validation of the prime nodal condition and
 the spectral law for the Riemann hypothes**](https://zenodo.org/records/17726547)
